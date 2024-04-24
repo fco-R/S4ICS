@@ -1,0 +1,357 @@
+{
+  "LVData": {
+    "Version": 18,
+    "Array": {
+      "Name": "data values",
+      "Dimsize": 12,
+      "LvVariant": [
+        {
+          "Name": "",
+          "String": {
+            "Name": "last cfg user",
+            "Val": "S4ICS"
+          }
+        },
+        {
+          "Name": "",
+          "String": {
+            "Name": "last cfg date",
+            "Val": "2021-08-30 16:19:52"
+          }
+        },
+        {
+          "Name": "",
+          "Boolean": {
+            "Name": "email enable",
+            "Val": 0
+          }
+        },
+        {
+          "Name": "",
+          "String": {
+            "Name": "email service",
+            "Val": "smt.gmail.com:465"
+          }
+        },
+        {
+          "Name": "",
+          "String": {
+            "Name": "admin email",
+            "Val": "s4ics@lna.br"
+          }
+        },
+        {
+          "Name": "",
+          "String": {
+            "Name": "maint. email",
+            "Val": "s4ics@lna.br"
+          }
+        },
+        {
+          "Name": "",
+          "U32": {
+            "Name": "auto logout",
+            "Val": 200
+          }
+        },
+        {
+          "Name": "",
+          "String": {
+            "Name": "server ip",
+            "Val": "localhost"
+          }
+        },
+        {
+          "Name": "",
+          "U16": {
+            "Name": "server port",
+            "Val": 54165
+          }
+        },
+        {
+          "Name": "",
+          "I32": {
+            "Name": "listenning timeout",
+            "Val": 100
+          }
+        },
+        {
+          "Name": "",
+          "Array": {
+            "Name": "user list",
+            "Dimsize": 3,
+            "Cluster": [
+              {
+                "Name": "user",
+                "NumElts": 3,
+                "String": [
+                  {
+                    "Name": "name",
+                    "Val": "S4ICS"
+                  },
+                  {
+                    "Name": "permission",
+                    "Val": "Admin"
+                  },
+                  {
+                    "Name": "password",
+                    "Val": "83b00a669f53ce7ddcb3eb6b2c05273e"
+                  }
+                ]
+              },
+              {
+                "Name": "user",
+                "NumElts": 3,
+                "String": [
+                  {
+                    "Name": "name",
+                    "Val": "CHICO"
+                  },
+                  {
+                    "Name": "permission",
+                    "Val": "Admin"
+                  },
+                  {
+                    "Name": "password",
+                    "Val": ""
+                  }
+                ]
+              },
+              {
+                "Name": "user",
+                "NumElts": 3,
+                "String": [
+                  {
+                    "Name": "name",
+                    "Val": "ERLI"
+                  },
+                  {
+                    "Name": "permission",
+                    "Val": "Start / Stop"
+                  },
+                  {
+                    "Name": "password",
+                    "Val": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "Name": "",
+          "Array": {
+            "Name": "WPROT positions",
+            "Dimsize": 17,
+            "Cluster": [
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "OFFSET"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 0
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP1"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 0
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP2"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 22.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP3"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 45
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP4"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 67.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP5"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 90
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP6"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 112.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP7"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 135
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP8"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 157.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP9"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 180
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP10"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 202.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP11"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 225
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP12"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 247.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP13"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 270
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP14"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 292.5
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP15"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 315
+                }
+              },
+              {
+                "Name": "position",
+                "NumElts": 2,
+                "String": {
+                  "Name": "pos_name",
+                  "Val": "WP16"
+                },
+                "DBL": {
+                  "Name": "pos_value",
+                  "Val": 337.5
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
