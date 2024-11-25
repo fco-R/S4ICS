@@ -15,6 +15,7 @@
 			<Item Name="Check admin.vi" Type="VI" URL="../SubVI/Check admin.vi"/>
 			<Item Name="Check id.vi" Type="VI" URL="../SubVI/Check id.vi"/>
 			<Item Name="Check message.vi" Type="VI" URL="../SubVI/Check message.vi"/>
+			<Item Name="Create 0mqPorts.vi" Type="VI" URL="../SubVI/Create 0mqPorts.vi"/>
 			<Item Name="Config file.vi" Type="VI" URL="../SubVI/Config file.vi"/>
 			<Item Name="Get date.vi" Type="VI" URL="../SubVI/Get date.vi"/>
 			<Item Name="Help communication.vi" Type="VI" URL="../SubVI/Help communication.vi"/>
@@ -29,6 +30,9 @@
 			<Item Name="ZeroMQ Client.vi" Type="VI" URL="../SubVI/ZeroMQ Client.vi"/>
 			<Item Name="String to number.vi" Type="VI" URL="../SubVI/String to number.vi"/>
 			<Item Name="Write log to file.vi" Type="VI" URL="../SubVI/Write log to file.vi"/>
+			<Item Name="Timestamp s4ics.vi" Type="VI" URL="../SubVI/Timestamp s4ics.vi"/>
+			<Item Name="Timestamp.vi" Type="VI" URL="../SubVI/Timestamp.vi"/>
+			<Item Name="Timed log record .vi" Type="VI" URL="../SubVI/Timed log record .vi"/>
 		</Item>
 		<Item Name="Custom" Type="Folder">
 			<Item Name="calw knob new.ctl" Type="VI" URL="../Custom/calw knob new.ctl"/>
@@ -51,7 +55,7 @@
 			<Item Name="Send batch otimizado.vi" Type="VI" URL="../DMX-ETH/Send batch otimizado.vi"/>
 			<Item Name="Teste Send instruction.vi" Type="VI" URL="../DMX-ETH/Teste Send instruction.vi"/>
 		</Item>
-		<Item Name="CTest" Type="Folder">
+		<Item Name="ThermalTest" Type="Folder">
 			<Item Name="File open.vi" Type="VI" URL="../CTest/File open.vi"/>
 			<Item Name="Write log.vi" Type="VI" URL="../CTest/Write log.vi"/>
 			<Item Name="ReadLogFile.vi" Type="VI" URL="../CTest/ReadLogFile.vi"/>
@@ -62,21 +66,20 @@
 		<Item Name="Test VIs" Type="Folder">
 			<Item Name="ZeroMQ Command Generator.vi" Type="VI" URL="../SubVI/ZeroMQ Command Generator.vi"/>
 			<Item Name="S4GUI Command Generator.vi" Type="VI" URL="../SubVI/S4GUI Command Generator.vi"/>
+			<Item Name="S4ICS Batch Processor.vi" Type="VI" URL="../SubVI/S4ICS Batch Processor.vi"/>
+		</Item>
+		<Item Name="0mq" Type="Folder">
+			<Item Name="libsodium.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libsodium.dll"/>
+			<Item Name="libzmq-v120-mt-4_3_2.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libzmq-v120-mt-4_3_2.dll"/>
+			<Item Name="lvzmq32.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.dll"/>
+			<Item Name="msvcp120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcp120.dll"/>
+			<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcr120.dll"/>
 		</Item>
 		<Item Name="S4ICS.vi" Type="VI" URL="../S4ICS.vi"/>
 		<Item Name="ICS.lvclass" Type="LVClass" URL="../ICS/ICS.lvclass"/>
 		<Item Name="TCP-Server.lvclass" Type="LVClass" URL="../TCP-Server/TCP-Server.lvclass"/>
 		<Item Name="Messenger.lvclass" Type="LVClass" URL="../Messenger/Messenger.lvclass"/>
 		<Item Name="StateManager.lvclass" Type="LVClass" URL="../StateManager/StateManager.lvclass"/>
-		<Item Name="MotorSim.lvclass" Type="LVClass" URL="../MotorSim/MotorSim.lvclass"/>
-		<Item Name="Motor.lvclass" Type="LVClass" URL="../Motor/Motor.lvclass"/>
-		<Item Name="MotorManager.lvclass" Type="LVClass" URL="../MotorManager/MotorManager.lvclass"/>
-		<Item Name="WPROT.lvclass" Type="LVClass" URL="../Motor/WPROT.lvclass"/>
-		<Item Name="WPSEL.lvclass" Type="LVClass" URL="../Motor/WPSEL.lvclass"/>
-		<Item Name="ASEL.lvclass" Type="LVClass" URL="../Motor/ASEL.lvclass"/>
-		<Item Name="CALW.lvclass" Type="LVClass" URL="../Motor/CALW.lvclass"/>
-		<Item Name="GMIR.lvclass" Type="LVClass" URL="../Motor/GMIR.lvclass"/>
-		<Item Name="GFOC.lvclass" Type="LVClass" URL="../Motor/GFOC.lvclass"/>
 		<Item Name="Calcula delay.vi" Type="VI" URL="../Desenvolvimento/Calcula delay.vi"/>
 		<Item Name="MQTT Client.vi" Type="VI" URL="../SubVI/MQTT Client.vi"/>
 		<Item Name="Send routine test.vi" Type="VI" URL="../SubVI/Send routine test.vi"/>
@@ -86,6 +89,11 @@
 		<Item Name="Help logger.vi" Type="VI" URL="../SubVI/Help logger.vi"/>
 		<Item Name="SPARC4.cfg" Type="Document" URL="../SPARC4.cfg"/>
 		<Item Name="S4config.xml" Type="Document" URL="../S4config.xml"/>
+		<Item Name="0mqManager.vi" Type="VI" URL="../0mqManager.vi"/>
+		<Item Name="0mqPubRep.vi" Type="VI" URL="../0mqPubRep.vi"/>
+		<Item Name="Batch file open.vi" Type="VI" URL="../SubVI/Batch file open.vi"/>
+		<Item Name="S4GUImenor2.ico" Type="Document" URL="../Users/Chicão/Desktop/S4GUImenor2.ico"/>
+		<Item Name="S4GUImenor4.ico" Type="Document" URL="../Users/Chicão/Desktop/S4GUImenor4.ico"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -178,126 +186,65 @@
 				<Item Name="RandomStringGenerator.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/Unicity/RandomStringGenerator/RandomStringGenerator.lvclass"/>
 				<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+				<Item Name="Timestamp to ISO8601 UTC DateTime.vi" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/Epoch Date &amp; Time/formatter.iso8601/Timestamp to ISO8601 UTC DateTime.vi"/>
+				<Item Name="Get Local UTC Offset.vi" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/Epoch Date &amp; Time/Get Local UTC Offset.vi"/>
+				<Item Name="UTC Offsets -- enum.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/Epoch Date &amp; Time/UTC Offsets -- enum.ctl"/>
+				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
+				<Item Name="CircularBuffer.lvlib" Type="Library" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/Advanced Structures/Circular Buffers/CircularBuffer.lvlib"/>
+				<Item Name="MQTT_Connection.lvlib" Type="Library" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/MQTT Connection/MQTT_Connection/MQTT_Connection.lvlib"/>
+				<Item Name="Stall Data Flow.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Stall Data Flow.vim"/>
 			</Item>
 			<Item Name="Message Queue.lvlib" Type="Library" URL="../Message Queue/Message Queue.lvlib"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
+			<Item Name="MotorManager.lvclass" Type="LVClass" URL="../MotorManager/MotorManager.lvclass"/>
+			<Item Name="Motor.lvclass" Type="LVClass" URL="../Motor/Motor.lvclass"/>
+			<Item Name="MotorSim.lvclass" Type="LVClass" URL="../MotorSim/MotorSim.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="S4ICS build 20240213" Type="EXE">
+			<Item Name="S4ICS build 20240924 batch" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{0E77BE8C-6CC1-4AD8-A115-C44D2422845F}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{9A21B7FE-DF7F-4F6A-82EE-2AF25672A766}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{1EE225E3-BDA1-42E1-B7F6-AD1C6D042EFC}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{C185F40E-560D-4B5D-9687-92377825E0E3}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{EBC7F703-420D-4272-AD89-F237AE05B474}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">S4ICS build 20240213</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{9E9280C6-64F1-4E48-BC54-46A40E17B6EE}</Property>
+				<Property Name="Bld_buildSpecDescription" Type="Str">Versão de teste para ajuste dos delays do VI Send and Log Instructions.</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">S4ICS build 20240924 batch</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240213</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240924 batch</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{71A886A9-3310-4D19-BA46-2B039ECCA2C0}</Property>
-				<Property Name="Bld_version.build" Type="Int">61</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{C8BFC6C1-5312-45CE-9DDB-B175E1922C24}</Property>
+				<Property Name="Bld_version.build" Type="Int">93</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">S4ICS.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240213/S4ICS.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240924 batch/S4ICS.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240213/Custom</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240924 batch/data</Property>
+				<Property Name="Destination[2].destName" Type="Str">Custom Directory</Property>
+				<Property Name="Destination[2].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240924 batch/Custom</Property>
+				<Property Name="Destination[3].destName" Type="Str">Test Directory</Property>
+				<Property Name="Destination[3].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240924 batch/Test</Property>
+				<Property Name="Destination[4].destName" Type="Str">Application Diredtory</Property>
+				<Property Name="Destination[4].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240924 batch</Property>
+				<Property Name="DestinationCount" Type="Int">5</Property>
 				<Property Name="Exe_cmdLineArgs" Type="Bool">true</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Custom/S4ICS icon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{4471420F-20E0-46B9-8758-145B1B30BE8D}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{58A7C9AF-EA3E-4281-ACBD-605EB8CAE324}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ICS.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/CTest/S4ICS Batch-Extract.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/ThermalTest/S4ICS Batch-Extract.vi</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/CTest/S4ICS Batch Command.vi</Property>
-				<Property Name="Source[11].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Custom/Luca transparent.png</Property>
-				<Property Name="Source[3].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[3].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Custom</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">Container</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Custom/wprot ctl.ctl</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Custom/gmir knob.ctl</Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
-				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Custom/calw knob.ctl</Property>
-				<Property Name="Source[6].type" Type="Str">VI</Property>
-				<Property Name="Source[7].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[7].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/SubVI</Property>
-				<Property Name="Source[7].type" Type="Str">Container</Property>
-				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/InterComm.vi</Property>
-				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[8].type" Type="Str">VI</Property>
-				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Test VIs/S4GUI Command Generator.vi</Property>
-				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">12</Property>
-				<Property Name="TgtF_companyName" Type="Str">Laboratório Nacional de Astrofísica</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">S4ICS build 20240213</Property>
-				<Property Name="TgtF_internalName" Type="Str">S4ICS build 20240213</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 Laboratório Nacional de Astrofísica</Property>
-				<Property Name="TgtF_productName" Type="Str">S4ICS build 20240213</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{68B4D8A4-BD38-4F86-84E8-A86E9AA28C9A}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">S4ICS.exe</Property>
-				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
-			</Item>
-			<Item Name="S4ICS build 20240423" Type="EXE">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{8A235C71-A2E5-46CC-8DB6-D621AFCBA7AA}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{0BF92381-9388-4EB7-88E5-3A92E4C36B84}</Property>
-				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{E3943F2A-19E3-4A91-9579-23B2032436B7}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">S4ICS build 20240423</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240423</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{E0A8D97A-7117-41A3-BD95-7AE4A6146B70}</Property>
-				<Property Name="Bld_version.build" Type="Int">69</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">S4ICS.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240423/S4ICS.exe</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS build 20240423/Custom</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Exe_cmdLineArgs" Type="Bool">true</Property>
-				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Custom/S4ICS icon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{28F6F10A-E30D-4A0F-878B-4E24579A159B}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ICS.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[10].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/CTest/S4ICS Batch-Extract.vi</Property>
-				<Property Name="Source[10].type" Type="Str">VI</Property>
-				<Property Name="Source[11].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/CTest/S4ICS Batch Command.vi</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/ThermalTest/S4ICS Batch Command.vi</Property>
 				<Property Name="Source[11].type" Type="Str">VI</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Test VIs/ZeroMQ Command Generator.vi</Property>
@@ -309,20 +256,29 @@
 				<Property Name="Source[14].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[14].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[14].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[14].destinationIndex" Type="Int">1</Property>
+				<Property Name="Source[14].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Test VIs</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].type" Type="Str">Container</Property>
+				<Property Name="Source[15].destinationIndex" Type="Int">4</Property>
 				<Property Name="Source[15].itemID" Type="Ref">/My Computer/SPARC4.cfg</Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[16].destinationIndex" Type="Int">4</Property>
 				<Property Name="Source[16].itemID" Type="Ref">/My Computer/S4config.xml</Property>
 				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[17].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[17].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[17].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[17].destinationIndex" Type="Int">1</Property>
+				<Property Name="Source[17].itemID" Type="Ref">/My Computer/0mq</Property>
+				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[17].type" Type="Str">Container</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Custom/Luca transparent.png</Property>
 				<Property Name="Source[3].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[3].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Custom</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">Container</Property>
@@ -347,14 +303,63 @@
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Test VIs/S4GUI Command Generator.vi</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">17</Property>
+				<Property Name="SourceCount" Type="Int">18</Property>
 				<Property Name="TgtF_companyName" Type="Str">Laboratório Nacional de Astrofísica</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">S4ICS build 20240213</Property>
 				<Property Name="TgtF_internalName" Type="Str">S4ICS build 20240213</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 Laboratório Nacional de Astrofísica</Property>
 				<Property Name="TgtF_productName" Type="Str">S4ICS build 20240213</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{3CC289FF-9C02-4BEE-854D-9A5B098595F1}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{29CEC4EC-7F3A-4D7B-86BE-0C0DE242E350}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">S4ICS.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+			<Item Name="S4ICS Batch Processor" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{5D86BB35-98BA-48BD-915D-1FA6115947F5}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{984A47E2-A553-4CDC-9698-153109CCE052}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{38537329-B88E-4223-BBF8-5BFAD740CFAA}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">S4ICS Batch Processor</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS Batch Processor</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{A28822CC-E3F5-4935-94C7-EF486B73588C}</Property>
+				<Property Name="Bld_version.build" Type="Int">8</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">S4ICS Batch Processor.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS Batch Processor/S4ICS Batch Processor.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ICS Batch Processor/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7DAE5BB1-6CFA-4B8A-962F-B8D59105CBFA}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Test VIs/S4ICS Batch Processor.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[2].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/0mq</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[2].type" Type="Str">Container</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Batch file open.vi</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">4</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">S4ICS Batch Processor</Property>
+				<Property Name="TgtF_internalName" Type="Str">S4ICS Batch Processor</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2024 </Property>
+				<Property Name="TgtF_productName" Type="Str">S4ICS Batch Processor</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{58C88750-8783-46E9-9E42-A16B71641FDE}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">S4ICS Batch Processor.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>

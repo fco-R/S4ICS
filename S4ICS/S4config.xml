@@ -15,7 +15,7 @@
 <Name></Name>
 <String>
 <Name>last cfg date</Name>
-<Val>2024-04-23 14:13:29</Val>
+<Val>2024-10-19 10:26:54</Val>
 </String>
 </LvVariant>
 <LvVariant>
@@ -34,7 +34,7 @@
 <Name></Name>
 <String>
 <Name>address</Name>
-<Val>200.131.64.126</Val>
+<Val>192.168.100.36</Val>
 </String>
 </LvVariant>
 <LvVariant>
@@ -178,7 +178,7 @@
 <Name></Name>
 <String>
 <Name>enabled log</Name>
-<Val>012345</Val>
+<Val>0123456</Val>
 </String>
 </LvVariant>
 <LvVariant>
@@ -723,7 +723,7 @@
 <Name></Name>
 <String>
 <Name>0mqEndpoint</Name>
-<Val>tcp://200.131.64.126:54030</Val>
+<Val>54030</Val>
 </String>
 </LvVariant>
 <LvVariant>
